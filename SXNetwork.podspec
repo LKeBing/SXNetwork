@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SXNetwork"
-  s.version      = "0.0.1"
+  s.version      = "0.0.4"
   s.ios.deployment_target = '9.0'
   s.summary      = "基于AFNetworking再次封装的网络请求框架"
   s.homepage     = "https://github.com/LKeBing/SXNetwork"

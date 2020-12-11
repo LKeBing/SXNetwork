@@ -337,7 +337,7 @@
 }
 
 - (void)printRequest:(NSString *)url params:(NSDictionary *)params result:(id)result {
-    NSLog(@"\n请求地址:%@%@,\n参数：%@\n请求结果:responseObject:%@",self.sessionManager.baseURL,url,params,result);
+    SXLog(@"\n请求地址:%@%@,\n参数：%@\n请求结果:responseObject:%@",self.sessionManager.baseURL,url,params,result);
 }
 
 - (NSString *)translateParams:(NSDictionary *)params {
@@ -427,7 +427,7 @@
     [sessionManager.requestSerializer setValue:refreshToken forHTTPHeaderField:@"token"];
     [sessionManager GET:@"/passport/api/auth/refresh_token" parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSLog(@"刷新token啦！！！\n请求结果:responseObject:%@",responseObject);
+        SXLog(@"刷新token啦！！！\n请求结果:responseObject:%@",responseObject);
         
         if(!responseObject) {// 刷新token出现异常
             completion?completion(NO):nil;

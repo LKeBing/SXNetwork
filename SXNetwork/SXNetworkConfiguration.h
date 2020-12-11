@@ -51,4 +51,11 @@ static NSString * const HTTPHeaderFieldKey = @"HTTPHeaderField";
 static NSString * const NetworkErrorMessage = @"网络异常，请稍后再试";
 static NSString * const UnkownErrorMessage = @"请求出错啦，请稍后再试";
 
+//打印
+#ifdef DEBUG
+#define SXLog(FORMAT, ...) fprintf(stderr,"%s:^^^%d ^^^ \t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define SXLog(FORMAT, ...) nil
+#endif
+
 #endif /* NetworkConfiguration_h */
